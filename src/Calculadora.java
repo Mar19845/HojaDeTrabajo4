@@ -1,31 +1,41 @@
 /**
- *
+ *@author Alfredo Quezada
  * @author Juan Marroquin
+ * Patron de diseño singleton sacado del video 
+ * https://www.youtube.com/watch?v=mWwj7g_-DXA
  */
 public class Calculadora implements Icalculadora{
-    // atributos calculadora
-    private int operador1;
-    private int operador2;
-    // constructor de calculadora
-    public Calculadora() {
-        
+    /**
+     * atributos calculadora
+     */
+    public int operador1;
+    public int operador2;
+    /**
+     * objeto de tipo calculadora para implementar el singleton
+     */
+    private static Calculadora Calcu;
+    /**
+    *constructor privado para implentar el singleton
+    **/
+    private Calculadora() {}
+    /**
+     * getter para el singleton
+     * si el objeto calculadora es nulo crea un objeto calculadora
+     * asi si, se crea otro objeto de tipo calculadora siempre retornara el mismo
+     * @return 
+     */
+    public static Calculadora getCalculadora() {
+        if(Calcu == null){
+            Calcu = new Calculadora();
+        }
+        return Calcu;
     }
-    //getters y setters operador1
-    public int getOperador1() {
-        return operador1;
-    }
-    public void setOperador1(int operador1) {
-        this.operador1 = operador1;
-    }
-    //getters y  setters operador2
-    public int getOperador2() {
-        return operador2;
-    }
-    public void setOperador2(int operador2) {
-        this.operador2 = operador2;
-    }
-    
-    //metdodo suma, suma dos valores y devuelve el resultado
+    /**
+     * metdodo suma, suma dos valores y devuelve el resultado
+     * @param operador1
+     * @param operador2
+     * @return 
+     */
     @Override
     public int Sumar(int operador1, int operador2) {
         int resultado = 0;
@@ -33,22 +43,37 @@ public class Calculadora implements Icalculadora{
         return resultado;
         
     }
-    // metodo resta, resta dos valores y devuelve el resultado
+    /**
+     * metodo resta, resta dos valores y devuelve el resultado
+     * @param operador1
+     * @param operador2
+     * @return 
+     */
     @Override
     public int Restar(int operador1, int operador2) {
         int resultado = 0;
         resultado = operador1 - operador2;
         return resultado;
     }
-    // metodo multiplcar, multiplica dos valores y devuelve el resltado
+    /**
+     * metodo multiplcar, multiplica dos valores y devuelve el resltado
+     * @param operador1
+     * @param operador2
+     * @return 
+     */
     @Override
     public int Multiplicar(int operador1, int operador2) {
         int resultado = 0;
         resultado = operador1 * operador2;
         return resultado;
     }
-    // metodo dividir, divde dos valores y devuelve el resultado
-    // debe de comprobar que el divisor no sea 0
+    /**
+     * metodo dividir, divde dos valores y devuelve el resultado
+     * debe de comprobar que el divisor no sea 0
+     * @param operador1
+     * @param operador2
+     * @return 
+     */
     @Override
     public int Dividir(int operador1, int operador2) {
         int resultado = 0;
