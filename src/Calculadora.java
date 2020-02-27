@@ -1,3 +1,6 @@
+
+import java.util.Scanner;
+
 /**
  *@author Alfredo Quezada
  * @author Juan Marroquin
@@ -79,5 +82,30 @@ public class Calculadora implements Icalculadora{
         int resultado = 0;
         resultado = operador1 / operador2;
         return resultado;
+    }
+    public double operar(String n, iStack v){
+        Scanner leer = new Scanner(n);
+        while (leer.hasNext()) {
+			if (leer.hasNextInt()) {
+				v.push(leer.nextInt());
+			} else {
+				int n2 = (int) v.pop();
+				int n1 = (int) v.pop();
+				String op = leer.next();
+
+				if (op.equals("+")) {
+					v.push(n1 + n2);
+				} else if (op.equals("-")) {
+					v.push(n1 - n2);
+				} else if (op.equals("*")) {
+					v.push(n1 * n2);
+				} else {
+					v.push(n1 / n2);
+				}
+
+			}
+		}
+		double a = (int) v.pop();
+		return a;
     }
 }
