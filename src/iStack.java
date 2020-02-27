@@ -2,6 +2,7 @@
  *@author Alfredo Quezada
  * @author Juan Marroquin
  * Codigo tomado del ejemplo proporcionado por Douglas en clase
+ * @param <E>
  */
 public interface iStack<E> {
     /**Metodo Push (Ingresa un elemento al Stack)

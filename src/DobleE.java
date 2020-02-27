@@ -13,7 +13,7 @@
 import java.util.List;
 
 
-public class DobleE<E> extends AbstractLista<E> {
+public class DobleE<E> extends AbstractLista<E> implements iStack<E>{
    
     protected List<E> data;
     @Override
@@ -57,6 +57,21 @@ public class DobleE<E> extends AbstractLista<E> {
 
 		return data.size();
 	}
+
+    @Override
+    public boolean isEmpy() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void push(E p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public E pop() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }
