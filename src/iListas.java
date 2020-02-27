@@ -4,8 +4,7 @@
  * Codigo tomado del libro de texto
  */
 public interface iListas <E>  {
-    /** Metodo que averigua el tamaño de la lista 
-    * @return size 
+    /** Metodo que averigua el tamaño de la lista  
     */
    public void add(E item);
    //Agrega valor a la lista 
