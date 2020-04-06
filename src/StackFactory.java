@@ -3,7 +3,7 @@ import java.util.Stack;
  *
  * @author Juan Marroquin
  */
-public class StackFactory {
+public class StackFactory<E>  {
     
     public iStack<E> getStack(String entry) {
     // seleccion de la implementacion a utilizar:

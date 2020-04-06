@@ -20,7 +20,7 @@ public class Calculadora implements Icalculadora{
     /**
     *constructor privado para implentar el singleton
     **/
-    private Calculadora() {}
+    public Calculadora() {}
     /**
      * getter para el singleton
      * si el objeto calculadora es nulo crea un objeto calculadora
